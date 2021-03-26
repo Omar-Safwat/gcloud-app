@@ -1,0 +1,25 @@
+<h2>Polynomial regression</h2>
+<p>This app plots polynomial regression, on the airquality measurments in Newyork, May to September 1973.<br>
+<h3>Sample data</h3>
+{% for table in tables %}
+          {{ table|safe }}
+{% endfor %}<br>
+  The model shows the correlation mean Ozone and the Temperature.<br>
+  After choosing the degree of the polynomial, the plot below will show the resulting model.<br> 
+  Choose the order of the polynomial below.</p> 
+<form action="" method="get"> 
+    <label for="poly_order">Select a polynomial order for the model:</label>
+    <select id="poly_order" name="poly_order">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+  </select>
+  <input type="submit">
+</form>
+<h2>Result</h2>
+<p><b>Order polynomial:</b> {{ chosen_order }}</p>
+<p><b>R<sup>2</sup><sub>training</sub> =</b> {{ r2 }}</p>
+<div class="container">
+<img src="data:image/png;base64, {{ plot_url }}"> 
+</div>
