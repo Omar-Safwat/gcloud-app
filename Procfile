@@ -1,1 +1,1 @@
-web: gunicorn app:app-data-glacier
+web: gunicorn main:app
